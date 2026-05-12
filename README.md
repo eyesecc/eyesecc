@@ -20,11 +20,11 @@ Security researcher focused on **reverse engineering**, **exploit development**,
 
 | Project | Description | Stars | Lang |
 |---------|-------------|-------|------|
-| [**vibe-island**]() | Dynamic Island for AI coding tools — macOS/Windows/Linux (Hyprland, GNOME, KDE) | ![Stars](🌟🌟🌟🌟) | ![Rust]() |
-| [**void-patcher-cc**]() | 105 patches on Claude Code CLI — Bun SEA bytecode patching, drift detection, auto-heal | ![Stars](🌟🌟🌟🌟) | ![Python]((https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)) |
-| [**omniwire**]() | AI agent swarm infra — 88 MCP tools, A2A, OmniMesh VPN, nftables, CDP browser, 2FA | ![Stars](🌟🌟🌟🌟🌟) | ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white) |
-| [**codex-patcher-cc**]() | Rust Mach-O patches + wrapper + config installer for OpenAI Codex CLI | ![Stars](🌟🌟) | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
-| [**re-notes**]() | Reverse engineering + security research notes — public reference | ![Stars](🌟🌟🌟🌟🌟) | ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white) |
+| [**vibe-island**]() | Dynamic Island for AI coding tools — macOS/Windows/Linux (Hyprland, GNOME, KDE) | ![Stars]🌟🌟🌟🌟 | ![Rust]() |
+| [**void-patcher-cc**]() | 105 patches on Claude Code CLI — Bun SEA bytecode patching, drift detection, auto-heal | ![Stars]🌟🌟🌟🌟 | ![Python]((https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)) |
+| [**omniwire**]() | AI agent swarm infra — 88 MCP tools, A2A, OmniMesh VPN, nftables, CDP browser, 2FA | ![Stars]🌟🌟🌟🌟🌟 | ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white) |
+| [**codex-patcher-cc**]() | Rust Mach-O patches + wrapper + config installer for OpenAI Codex CLI | ![Stars]🌟🌟 | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
+| [**re-notes**]() | Reverse engineering + security research notes — public reference | ![Stars]🌟🌟🌟🌟🌟 | ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white) |
 
 </div>
 
