@@ -1,0 +1,470 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans,sans-serif)}
+.wrap{padding:1rem 0;color:var(--color-text-primary)}
+.phase-header{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:var(--border-radius-lg);cursor:pointer;user-select:none;border:0.5px solid var(--color-border-tertiary);margin-bottom:4px;transition:background .15s}
+.phase-header:hover{background:var(--color-background-secondary)}
+.phase-title{font-size:16px;font-weight:500}
+.phase-sub{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.badge{font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.chevron{margin-left:auto;font-size:14px;color:var(--color-text-secondary);transition:transform .2s}
+.chevron.open{transform:rotate(180deg)}
+.weeks{display:none;padding:6px 0 16px 0;border-left:2px solid var(--color-border-tertiary);margin-left:18px;margin-bottom:8px}
+.weeks.open{display:block}
+.week{padding:10px 18px;border-radius:6px;margin-bottom:2px;cursor:pointer;transition:background .12s}
+.week:hover{background:var(--color-background-secondary)}
+.week-label{font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:3px}
+.week-title{font-size:14px;font-weight:500;color:var(--color-text-primary)}
+.week-body{font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-top:6px;display:none}
+.week-body.open{display:block}
+.week-tasks{margin-top:6px;padding-left:14px}
+.week-tasks li{margin-bottom:3px;font-size:13px;color:var(--color-text-secondary)}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.p1-dot{background:#7F77DD}
+.p2-dot{background:#1D9E75}
+.p3-dot{background:#D85A30}
+.p4-dot{background:#BA7517}
+.p1-badge{background:#EEEDFE;color:#3C3489}
+.p2-badge{background:#E1F5EE;color:#085041}
+.p3-badge{background:#FAECE7;color:#712B13}
+.p4-badge{background:#FAEEDA;color:#633806}
+@media(prefers-color-scheme:dark){
+.p1-badge{background:#26215C;color:#AFA9EC}
+.p2-badge{background:#04342C;color:#5DCAA5}
+.p3-badge{background:#4A1B0C;color:#F0997B}
+.p4-badge{background:#412402;color:#EF9F27}
+}
+.goal-box{padding:12px 16px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);margin-bottom:20px;font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+.goal-box strong{color:var(--color-text-primary);font-weight:500}
+</style>
+<div class="wrap">
+<div class="goal-box"><strong>The principle:</strong> every phase builds one layer of the stack — OS internals → network + protocols → web + binary exploitation → full-chain thinking. By month 12, CTF machines are puzzles your logic already knows how to disassemble.</div>
+
+<div id="phases"></div>
+</div>
+<script>
+const phases = [
+  {
+    id:'p1', color:'p1',
+    title:'Phase 1 — How computers actually work',
+    sub:'Months 1–3 · Weeks 1–12',
+    badge:'Foundation',
+    weeks:[
+      {
+        n:1,
+        title:'Linux internals deep dive — processes & memory',
+        tasks:[
+          'Read how the Linux kernel manages processes: fork(), exec(), process trees, /proc filesystem',
+          'Write C programs that use fork/exec manually — don\'t use a tutorial, figure out why it works',
+          'Map out: what happens from power-on to a bash prompt? Draw every step',
+          'Tool: strace. Run it on every command you use this week. Read what syscalls do what',
+        ]
+      },
+      {
+        n:2,
+        title:'File system, permissions & privilege model',
+        tasks:[
+          'Read the Linux permission model from source level: uid/gid/euid/egid — why they differ',
+          'Understand setuid binaries: write one in C, strace it, explain why it\'s dangerous',
+          'Map the /proc/[pid]/ layout for a running process — what every entry means',
+          'Exercise: given a setuid binary, can you think of how it could be abused before looking anything up?',
+        ]
+      },
+      {
+        n:3,
+        title:'Memory layout — stack, heap, segments',
+        tasks:[
+          'Draw the exact virtual memory layout of a running Linux process (text/data/bss/heap/stack/vdso/vvar)',
+          'Write C programs to deliberately read the layout via /proc/self/maps',
+          'Understand what the stack pointer and base pointer actually are — draw a stack frame by hand',
+          'Read how malloc works internally (glibc malloc) — bins, chunks, headers',
+        ]
+      },
+      {
+        n:4,
+        title:'How the CPU executes your code',
+        tasks:[
+          'Learn x86-64 calling conventions — what registers hold what, how arguments are passed',
+          'Disassemble a simple C function with objdump/gdb — read the asm and predict what it does',
+          'Understand what a function prologue/epilogue does and WHY (save rbp, sub rsp — what would break without it)',
+          'Read about CPU rings (0/3) — why does userspace/kernelspace distinction exist at the hardware level?',
+        ]
+      },
+      {
+        n:5,
+        title:'What happens when your program crashes',
+        tasks:[
+          'Generate a segfault deliberately, read the core dump with gdb, understand every field',
+          'Understand what a null pointer dereference is at the machine level — what address is accessed?',
+          'Read about signals: SIGSEGV, SIGBUS, SIGILL — when does the kernel send each?',
+          'Exercise: write a program that reads from address 0x0. Predict the crash before running',
+        ]
+      },
+      {
+        n:6,
+        title:'Networking internals — TCP/IP from the kernel\'s view',
+        tasks:[
+          'Read the kernel\'s socket API: what happens between socket() → bind() → listen() → accept()?',
+          'Write a raw TCP server in C from scratch (no libraries). Read every syscall you use',
+          'Use Wireshark: capture a TCP handshake, HTTP request, DNS query. Read every byte',
+          'Understand the kernel\'s network stack layers — where does each packet get modified?',
+        ]
+      },
+      {
+        n:7,
+        title:'Protocols you must understand cold',
+        tasks:[
+          'Read HTTP/1.1 RFC — not a tutorial, the actual spec. Understand every header you\'ll ever see',
+          'Read how DNS actually resolves — recursive vs iterative, what data each server holds',
+          'Read TLS handshake in detail — what each message contains, what the keys are for',
+          'Write an HTTP server by hand (raw sockets, parse the request yourself, send a 200 OK)',
+        ]
+      },
+      {
+        n:8,
+        title:'Authentication & session mechanics',
+        tasks:[
+          'Read how cookies work at the HTTP level — Set-Cookie, scope, flags (HttpOnly, Secure, SameSite)',
+          'Understand JWTs: base64 decode one, read each field, understand the none-algorithm issue',
+          'Read how OAuth2 flows work — authorization code, implicit, client credentials — draw each flow',
+          'Exercise: what would break if the server never validates the JWT signature? Walk through the consequences',
+        ]
+      },
+      {
+        n:9,
+        title:'Cryptography intuition (not math — mechanics)',
+        tasks:[
+          'Understand symmetric vs asymmetric encryption at the operational level — what keys exist, who holds them',
+          'Read about padding oracle attacks — understand why the PADDING reveals PLAINTEXT without the key',
+          'Learn what CBC mode is and why bit-flipping one block corrupts the decryption of the next',
+          'Exercise: if you can modify ciphertext before decryption and see a "padding error" or "ok", what can you derive?',
+        ]
+      },
+      {
+        n:10,
+        title:'Web architecture — from browser to database',
+        tasks:[
+          'Map the full web request lifecycle: DNS → TCP → TLS → HTTP → app server → DB → response',
+          'Read how SQL queries actually execute — query parsing, planning, execution, what indexes do',
+          'Understand what a prepared statement is at the driver level — why does it prevent injection?',
+          'Exercise: given a raw SQL query with user input, find every injection point before looking up the CVE',
+        ]
+      },
+      {
+        n:11,
+        title:'How web servers handle input',
+        tasks:[
+          'Read how CGI, WSGI, and PHP-FPM work — how does user input reach application code?',
+          'Understand deserialization: what happens when a language reconstructs an object from bytes?',
+          'Read how PHP\'s unserialize() works — what does __wakeup() and __destruct() do?',
+          'Exercise: if you control the serialized data passed to unserialize(), what can you trigger?',
+        ]
+      },
+      {
+        n:12,
+        title:'Phase 1 consolidation — build your mental model',
+        tasks:[
+          'Write a single document: "what a computer does with a web request, from electrons to response"',
+          'For each layer you\'ve studied, write one sentence: "the attacker\'s leverage at this layer is ___"',
+          'Identify 3 things you still don\'t understand. That\'s your reading list for next week\'s free time',
+          'No exercises this week — only synthesis and writing. If you can\'t explain it simply, you don\'t know it yet',
+        ]
+      },
+    ]
+  },
+  {
+    id:'p2', color:'p2',
+    title:'Phase 2 — Exploitation mechanics from first principles',
+    sub:'Months 4–6 · Weeks 13–26',
+    badge:'Exploit Logic',
+    weeks:[
+      {n:13, title:'Buffer overflows — why memory corruption happens', tasks:[
+        'Write a vulnerable C program with gets() — read the source, predict what an overflow does to the stack',
+        'Use gdb: set a breakpoint at the return, overflow the buffer, watch rip get overwritten',
+        'Understand why exactly 8 bytes past the saved rbp lands on the return address — draw the stack',
+        'No exploits yet — just understand the mechanism. What does "control of rip" actually mean?',
+      ]},
+      {n:14, title:'Writing your first shellcode — from scratch', tasks:[
+        'Write x86-64 shellcode that executes /bin/sh using only syscalls — no libc',
+        'Understand why NULLs break shellcode in string contexts — fix your shellcode to be NULL-free',
+        'Use strace on a shell — what syscalls does it make? Your shellcode should do the same',
+        'Exercise: write shellcode that reads /etc/passwd and writes it to stdout — no googling payloads',
+      ]},
+      {n:15, title:'Stack canaries and ASLR — understand the defense to break it', tasks:[
+        'Read how stack canaries are implemented — where is the value placed, when is it checked?',
+        'Understand ASLR: what is randomized, what is NOT randomized (relative offsets within a binary)',
+        'Read about format string vulnerabilities — why does printf("%s", user_input) vs printf(user_input) differ?',
+        'Exercise: given a format string bug, how would you leak the canary value? Think before looking it up',
+      ]},
+      {n:16, title:'ROP — return-oriented programming logic', tasks:[
+        'Understand why NX/DEP prevents shellcode injection — what does the hardware actually enforce?',
+        'Read what a ROP gadget is — a ret-ending instruction sequence. Why does control of rsp = control of execution?',
+        'Manually find gadgets in a binary with ROPgadget/ropper — read the assembly, understand what each does',
+        'Build a ROP chain manually (no automated tools yet) that calls system("/bin/sh")',
+      ]},
+      {n:17, title:'Heap exploitation fundamentals', tasks:[
+        'Read glibc malloc internals: free chunk structure, bin types, what fd/bk pointers are',
+        'Understand use-after-free: after free(), the memory can be reallocated — what can you overwrite?',
+        'Read about heap overflow: overwrite the next chunk\'s header — what does the allocator do next?',
+        'Exercise: given a UAF bug in a program, think through: what do I want to overwrite? Where does that live?',
+      ]},
+      {n:18, title:'SQL injection — derive the attack from the query', tasks:[
+        'Given any SQL query, find injection points by reading the query structure (WHERE, ORDER BY, UNION, etc.)',
+        'Understand what UNION SELECT needs: same column count, compatible types — why? Read how SQL parses it',
+        'Understand error-based vs blind vs time-based injection — derive each from first principles (no cheatsheets)',
+        'Exercise: given a blind SQLi target, what is the minimum number of requests to extract one character?',
+      ]},
+      {n:19, title:'XSS — understand the browser security model', tasks:[
+        'Read the Same-Origin Policy: what constitutes same origin? When does it apply, when doesn\'t it?',
+        'Understand what XSS does at the browser level — you\'re running JS in the victim\'s origin. What does that unlock?',
+        'Read CSP (Content Security Policy) — what does it block, what are its bypasses?',
+        'Exercise: given CSP: script-src \'self\', how would you still execute arbitrary JS if you can inject HTML?',
+      ]},
+      {n:20, title:'Command injection & SSRF logic', tasks:[
+        'Read how shell command parsing works — what characters split commands? Why does ; work?',
+        'Understand when an application might call system() or popen() with user-controlled input',
+        'Read SSRF: the server makes a request on your behalf — what internal services can it reach? What protocols?',
+        'Exercise: if SSRF works and the server is on AWS, what URL do you try first? Why? Reason it out',
+      ]},
+      {n:21, title:'File inclusion & path traversal', tasks:[
+        'Read how PHP include/require works — what does including a file actually do at the interpreter level?',
+        'Understand why ../../../etc/passwd works — what is the kernel doing with that path?',
+        'Read LFI to RCE paths: log poisoning, /proc/self/fd, PHP session files — understand each mechanism',
+        'Exercise: if you have LFI and can write to /tmp, think through every path to RCE before Googling',
+      ]},
+      {n:22, title:'Authentication bypass logic', tasks:[
+        'Read IDOR: what happens when an ID in a URL is checked by the client but not the server?',
+        'Understand type juggling in PHP: "0e123" == "0e456" is true — why? Read PHP type coercion rules',
+        'Study JWT attacks: alg:none, key confusion (RS256 to HS256) — understand the logic, not just the payload',
+        'Exercise: given a login form, list every category of bypass before touching it. Race condition? Logic flaw? Token forgery?',
+      ]},
+      {n:23, title:'Privilege escalation — Linux', tasks:[
+        'Read sudo misconfigurations: NOPASSWD, wildcard injection in sudo commands, env_keep',
+        'Understand SUID binary abuse: what can you do if /usr/bin/find is SUID root?',
+        'Read about capabilities — what is CAP_NET_RAW, CAP_SYS_PTRACE, CAP_DAC_OVERRIDE?',
+        'Exercise: given access to a box, build a mental checklist of what to check — derive it from OS internals knowledge',
+      ]},
+      {n:24, title:'Active Directory — architecture before attacks', tasks:[
+          'Read what AD is at the protocol level: Kerberos, LDAP, SMB — how do they interact?',
+          'Understand the Kerberos flow: AS-REQ, AS-REP, TGS-REQ, TGS-REP — draw it from memory',
+          'Read what a TGT is, what a service ticket is, what the KDC holds',
+          'No attacks yet — understand the architecture so the attacks are obvious later',
+      ]},
+      {n:25, title:'AD attacks — derive them from the protocol', tasks:[
+        'Kerberoasting: service accounts have SPNs → you can request their tickets → tickets are encrypted with their NTLM hash → offline crack. Derive this yourself from what you know',
+        'AS-REP roasting: accounts with "don\'t require preauth" → request AS-REP without password → crack the hash. Why does this work?',
+        'Pass-the-hash: NTLM auth never validates the plaintext password server-side — just the hash. What does that unlock?',
+        'Exercise: given a compromised low-priv domain user, list every escalation path you can think of from first principles',
+      ]},
+      {n:26, title:'Phase 2 consolidation — connect the layers', tasks:[
+        'Write: "given a web app, my attack decision tree is ___". Map every input to a category of vulnerability',
+        'Write: "given a Linux box with a shell, my privilege escalation decision tree is ___"',
+        'Write: "given a Windows domain environment, my escalation order is ___"',
+        'If you can\'t write these without notes, identify the gaps and fill them before Phase 3',
+      ]},
+    ]
+  },
+  {
+    id:'p3', color:'p3',
+    title:'Phase 3 — Full chain thinking & chaining vulns',
+    sub:'Months 7–9 · Weeks 27–39',
+    badge:'Chain Building',
+    weeks:[
+      {n:27, title:'Reconnaissance logic — what to look for and why', tasks:[
+        'Build a mental model of what information a target exposes: DNS, HTTP headers, JS files, error messages, comments',
+        'Read what technologies leak about themselves — what does X-Powered-By tell you? What does a stack trace give you?',
+        'Understand fingerprinting: how do you identify frameworks, versions, libraries from behavior alone?',
+        'Exercise: visit any public web app and map everything it tells you about itself without touching a scanner',
+      ]},
+      {n:28, title:'Source code auditing — reading code as an attacker', tasks:[
+        'Learn to read PHP, Python, Node.js code with an attacker\'s eye: sources (user input) vs sinks (dangerous functions)',
+        'Practice: take open-source projects with known CVEs, find the vulnerability in the code BEFORE reading the CVE',
+        'Understand what grep patterns to look for: user_input, $_GET, $_POST, request.args, exec, system, eval, pickle',
+        'Exercise: audit a small open-source app (50-200 files), write a report of every suspicious input flow',
+      ]},
+      {n:29, title:'Building chains: foothold → privilege escalation', tasks:[
+        'Take a vulnerable web app + Linux host scenario: find the web vuln, get a shell, escalate — document every decision',
+        'Write the chain as a decision tree: "I found X, which means I can try Y, which gives me Z"',
+        'Practice pivoting: if a box has two interfaces, how do you reach the internal network from your shell?',
+        'Focus on the WHY at every step: don\'t just run a command, explain what it does and why you chose it',
+      ]},
+      {n:30, title:'Windows exploitation fundamentals', tasks:[
+        'Read Windows process model: handles, ACLs, DACLs, SACLs, token impersonation',
+        'Understand Windows privilege escalation: unquoted service paths, AlwaysInstallElevated, DLL hijacking',
+        'Read what SeImpersonatePrivilege enables — why can a service account exploit it?',
+        'Exercise: derive why unquoted service paths are exploitable from how CreateProcess() parses arguments',
+      ]},
+      {n:31, title:'Post-exploitation thinking', tasks:[
+        'Read what credential storage looks like on Linux (shadow file, SSH keys, .bash_history, config files)',
+        'Read Windows credential storage: SAM, LSASS, credential manager, DPAPI',
+        'Understand lateral movement: what does pass-the-hash look like on the network? How do defenders detect it?',
+        'Build a post-exploitation checklist from first principles — what does an attacker need to establish persistence?',
+      ]},
+      {n:32, title:'Evasion logic — understand defenses to bypass them', tasks:[
+        'Read how AV signatures work — what makes a file "malicious"? Byte sequences, entropy, import tables',
+        'Understand obfuscation: why does XOR encoding defeat static signatures? What does dynamic analysis catch?',
+        'Read EDR behavior: what system calls does it hook? What does it look for in memory?',
+        'Exercise: if you\'re not allowed to touch disk, how do you execute your payload? Think through the options',
+      ]},
+      {n:33, title:'Network pivoting & tunneling', tasks:[
+        'Read how SSH port forwarding works: -L (local), -R (remote), -D (dynamic/SOCKS) — explain each from the TCP level',
+        'Understand what a SOCKS proxy does — how does proxychains redirect your connections through it?',
+        'Read chisel, ligolo-ng internals — what do they do that SSH forwarding doesn\'t?',
+        'Exercise: you have a shell on machine A, which can reach machine B on port 5432. How do you connect from your Kali?',
+      ]},
+      {n:34, title:'Cloud attack surface — AWS fundamentals', tasks:[
+        'Read the AWS IAM model: users, roles, policies, trust relationships — what is a role assumption?',
+        'Understand the EC2 instance metadata service: what does 169.254.169.254 expose? What credentials live there?',
+        'Read S3 bucket misconfigurations: ACLs, bucket policies, what does "public-read" actually mean?',
+        'Exercise: if you have SSRF on an EC2 instance, map out every step to privilege escalation in AWS',
+      ]},
+      {n:35, title:'Race conditions & logic flaws', tasks:[
+        'Read what a TOCTOU (time-of-check to time-of-use) race condition is at the OS level',
+        'Understand web race conditions: what happens if two requests hit a balance-deduct endpoint simultaneously?',
+        'Read about business logic flaws: negative quantities, coupon stacking, skipping steps in a workflow',
+        'Exercise: design a purchase flow with a race condition and a logic flaw, then find both in your own design',
+      ]},
+      {n:36, title:'Protocol-level attacks', tasks:[
+        'Read DNS rebinding: how does it bypass SOP? What does the browser do after a DNS TTL expires?',
+        'Understand WebSocket security: what authentication happens at the protocol level vs application level?',
+        'Read HTTP request smuggling: what happens when the frontend and backend disagree on where a request ends?',
+        'Exercise: derive the smuggling attack from the CL vs TE header disagreement — don\'t look at payloads yet',
+      ]},
+      {n:37, title:'Full machine simulation — web → foothold → root', tasks:[
+        'Pick a retired HTB/VulnHub machine. Do NOT look at walkthroughs. Time yourself',
+        'Document every decision: what did you find, why did you try what you tried, what failed and why',
+        'After completing: compare your path to the intended path. Where did your logic lead you astray?',
+        'This is a diagnostic — the goal is not to finish fast but to understand your decision-making gaps',
+      ]},
+      {n:38, title:'Full machine simulation — AD focused', tasks:[
+        'Pick a retired AD-focused HTB machine (Cascade, Resolute, Forest, Active). No walkthrough',
+        'Your constraint: document every enumeration decision — why did you run that query? What did you expect to find?',
+        'Map the kill chain: initial foothold → lateral movement → DC compromise. Every link should be logically justified',
+        'After: if you used a tool without fully understanding its output, that\'s a gap — go fill it',
+      ]},
+      {n:39, title:'Phase 3 consolidation — attack methodology formalization', tasks:[
+        'Write your personal attack methodology document — minimum 3 pages, no bullet lists, full reasoning chains',
+        'For each category (web, Linux PE, Windows PE, AD), write the question you ask first and why',
+        'Identify your three weakest areas from the past 3 months — plan Phase 4 to address them specifically',
+        'Write: "here is how I would approach a machine I\'ve never seen before, step by step"',
+      ]},
+    ]
+  },
+  {
+    id:'p4', color:'p4',
+    title:'Phase 4 — Speed, gaps & real-world readiness',
+    sub:'Months 10–12 · Weeks 40–52',
+    badge:'Mastery',
+    weeks:[
+      {n:40, title:'Timed simulation — 4 hours, one machine, no hints', tasks:[
+        'Set a strict 4-hour timer. Pick a machine rated Medium or Hard. No hints, no walkthroughs during',
+        'Track: how long did initial recon take? How long did you spend on rabbit holes?',
+        'After: what was the first thing you should have checked that you didn\'t? Why did you miss it?',
+        'The goal is to identify where your logic breaks down under time pressure',
+      ]},
+      {n:41, title:'Revisit and break your own tools', tasks:[
+        'Take exploits you\'ve written in previous phases — modify the target so the exploit fails. Fix it',
+        'Modify your shellcode to work with a different bad-char set. Understand every byte you change',
+        'Break your ROP chain by changing the binary slightly — rewrite it from scratch, don\'t copy-paste',
+        'The goal: demonstrate you understand the exploit, not that you memorized it',
+      ]},
+      {n:42, title:'Custom tooling — write what you need', tasks:[
+        'Write a Python port scanner from raw sockets. Not a nmap wrapper — raw TCP connections',
+        'Write a directory bruter that handles rate limiting, redirects, and custom headers',
+        'Write a basic SQL injection tester that extracts data from a blind injection point automatically',
+        'Goal: if you can\'t use a tool, you write one. That requires understanding the protocol',
+      ]},
+      {n:43, title:'Deepen your weakest area (week 1)', tasks:[
+        'Use your Phase 3 gap analysis. Dedicate this week to weakness #1',
+        'Go back to first principles for that topic — read documentation, not tutorials',
+        'Write a proof-of-concept exploit for that specific technique from scratch',
+        'If weakness is AD: implement a Kerberoasting script manually without Impacket',
+      ]},
+      {n:44, title:'Deepen your weakest area (week 2)', tasks:[
+        'Continue weakness #2. Same methodology: first principles, documentation, PoC',
+        'Find a CVE related to that weakness — read the patch to understand what the vulnerability was',
+        'Write a short technical explanation of the vulnerability as if teaching someone else',
+        'Teaching-quality explanation is the test — if you can\'t teach it, you don\'t fully understand it',
+      ]},
+      {n:45, title:'Deepen your weakest area (week 3)', tasks:[
+        'Weakness #3. Same approach',
+        'This time: find a real-world bug bounty report on HackerOne or a CVE in the same class',
+        'Map their finding to your mental model — does their attack fit your decision tree? Where does it branch?',
+        'Update your attack methodology document with what you\'ve learned in weeks 43-45',
+      ]},
+      {n:46, title:'Binary exploitation — return to rop & heap', tasks:[
+        'Revisit heap exploitation: implement a tcache poisoning attack manually — understand every pointer',
+        'Read about one-gadget: what is it, why does it work, when does it not work?',
+        'Understand ret2libc fully: if ASLR is on but you have a leak, step through the math of calculating libc base',
+        'Exercise: take a binary with FULL RELRO, NX, stack canary, PIE, ASLR. List every primitive you need to exploit it',
+      ]},
+      {n:47, title:'Web — advanced techniques', tasks:[
+        'Read prototype pollution: what is the JavaScript prototype chain, what does __proto__ do?',
+        'Understand template injection: why does {{7*7}} rendering as 49 mean RCE is possible?',
+        'Read OAuth misconfigurations: redirect_uri validation bypass, state parameter CSRF, open redirects in the flow',
+        'Exercise: given any OAuth login flow, enumerate every assumption the developer might have made — each is an attack surface',
+      ]},
+      {n:48, title:'Full simulation — 2 machines, 8 hours, CTF format', tasks:[
+        'Simulate a CTF day: 8 hours, 2 machines, document everything',
+        'After: write a mini after-action report — what worked, what didn\'t, what would you do differently?',
+        'Identify any area where you still relied on "run this tool and grep the output" without understanding',
+        'That dependency is your remaining gap. Fill it before week 52',
+      ]},
+      {n:49, title:'Networking attacks & packet manipulation', tasks:[
+        'Read ARP spoofing at the protocol level — why does ARP have no authentication?',
+        'Write a Python ARP poisoner from scratch using Scapy — understand every packet field',
+        'Read VLAN hopping — what is 802.1Q, when does double-tagging work?',
+        'Exercise: in a switched network, what attacks still work? What requires L2 access? Reason from the protocol',
+      ]},
+      {n:50, title:'Advanced AD — DCSync, Golden Ticket, Diamond Ticket', tasks:[
+        'Read DCSync: what is the DS-Replication-Get-Changes right? Why does it let you pull password hashes?',
+        'Understand Golden Ticket: if you have the krbtgt hash, why can you forge any TGT? What does the KDC actually validate?',
+        'Read Diamond Ticket — what does it do that Golden Ticket doesn\'t? Why is it harder to detect?',
+        'Exercise: without using Impacket, describe exactly what bytes you\'d craft to forge a TGT — down to the Kerberos ASN.1 structure',
+      ]},
+      {n:51, title:'Report writing — think like a professional', tasks:[
+        'Take any exploit you\'ve built this year. Write a professional vulnerability report: title, severity (CVSS), description, PoC, impact, remediation',
+        'Write it so a developer who doesn\'t know pentesting can reproduce and fix it',
+        'This is the skill that turns technical knowledge into professional output',
+        'Re-read your Phase 1 methodology doc — how has your thinking changed? Update it completely',
+      ]},
+      {n:52, title:'Final validation — solve a Hard machine, no help', tasks:[
+        'Pick a retired Hard HTB machine you\'ve never looked at. Solve it with no help, no hints',
+        'The constraint: before running any tool, write down what you expect to find and why',
+        'Compare expectation to reality at every step — where did your model fail?',
+        'You\'re done when the gap between your predictions and the machine\'s behavior is small. That\'s the logic you built',
+      ]},
+    ]
+  }
+];
+
+function build(){
+  const container=document.getElementById('phases');
+  phases.forEach(ph=>{
+    const wrap=document.createElement('div');
+    wrap.style.marginBottom='8px';
+    const hdr=document.createElement('div');
+    hdr.className='phase-header';
+    hdr.innerHTML=`<div class="dot ${ph.color}-dot"></div><div><div class="phase-title">${ph.title}</div><div class="phase-sub">${ph.sub}</div></div><span class="badge ${ph.color}-badge">${ph.badge}</span><span class="chevron" id="chev-${ph.id}">▾</span>`;
+    const wk=document.createElement('div');
+    wk.className='weeks';
+    wk.id='weeks-'+ph.id;
+    ph.weeks.forEach(w=>{
+      const wd=document.createElement('div');
+      wd.className='week';
+      wd.innerHTML=`<div class="week-label">Week ${w.n}</div><div class="week-title">${w.title}</div><div class="week-body" id="wb-${ph.id}-${w.n}"><ul class="week-tasks">${w.tasks.map(t=>`<li>${t}</li>`).join('')}</ul></div>`;
+      wd.onclick=(e)=>{e.stopPropagation();const b=document.getElementById(`wb-${ph.id}-${w.n}`);b.classList.toggle('open');};
+      wk.appendChild(wd);
+    });
+    hdr.onclick=()=>{
+      wk.classList.toggle('open');
+      document.getElementById('chev-'+ph.id).classList.toggle('open');
+    };
+    wrap.appendChild(hdr);
+    wrap.appendChild(wk);
+    container.appendChild(wrap);
+  });
+}
+build();
+</script>
