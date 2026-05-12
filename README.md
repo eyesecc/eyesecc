@@ -10,7 +10,7 @@ $ cat /etc/passwd | grep eyesec
 
 Security researcher focused on **reverse engineering**, **exploit development**, and **AI-assisted offensive tooling**. I build tools that make security research faster, more reproducible, and evidence-driven. Currently shipping production-grade Rust, Python, TypeScript, and Zig across agent infrastructure, binary patching, and desktop tooling.
 
-> **Scope first. Evidence always. Root cause over symptoms. Fixes that can actually ship.**
+> **Logic is power.**
 
 ---
 
@@ -20,11 +20,11 @@ Security researcher focused on **reverse engineering**, **exploit development**,
 
 | Project | Description | Stars | Lang |
 |---------|-------------|-------|------|
-| [**vibe-island**]() | Dynamic Island for AI coding tools — macOS/Windows/Linux (Hyprland, GNOME, KDE) | ![Stars]🌟🌟🌟🌟 | ![Rust]() |
-| [**void-patcher-cc**]() | 105 patches on Claude Code CLI — Bun SEA bytecode patching, drift detection, auto-heal | ![Stars]🌟🌟🌟🌟 | ![Python]((https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)) |
-| [**omniwire**]() | AI agent swarm infra — 88 MCP tools, A2A, OmniMesh VPN, nftables, CDP browser, 2FA | ![Stars]🌟🌟🌟🌟🌟 | ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white) |
-| [**codex-patcher-cc**]() | Rust Mach-O patches + wrapper + config installer for OpenAI Codex CLI | ![Stars]🌟🌟 | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
-| [**re-notes**]() | Reverse engineering + security research notes — public reference | ![Stars]🌟🌟🌟🌟🌟 | ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white) |
+| [**vibe-island**]() | Dynamic Island for AI coding tools — macOS/Windows/Linux (Hyprland, GNOME, KDE) | 🌟🌟🌟🌟 | ![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white) |
+| [**void-patcher-cc**]() | 105 patches on Claude Code CLI — Bun SEA bytecode patching, drift detection, auto-heal | 🌟🌟🌟🌟 | ![Python]((https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)) |
+| [**omniwire**]() | AI agent swarm infra — 88 MCP tools, A2A, OmniMesh VPN, nftables, CDP browser, 2FA | 🌟🌟🌟🌟🌟 | ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white) |
+| [**codex-patcher-cc**]() | Rust Mach-O patches + wrapper + config installer for OpenAI Codex CLI | 🌟🌟 | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
+| [**re-notes**]() | Reverse engineering + security research notes — public reference | 🌟🌟🌟🌟🌟 | ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white) |
 
 </div>
 
@@ -60,12 +60,12 @@ Security researcher focused on **reverse engineering**, **exploit development**,
 
 <div align="center">
 
-<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=VoidChecksum&theme=tokyonight" />
-<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=VoidChecksum&theme=tokyonight" />
+<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=eyesecc&theme=tokyonight" />
+<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=eyesecc&theme=tokyonight" />
 
 <br/>
 
-<img src="https://streak-stats.demolab.com/?user=VoidChecksum&theme=tokyonight&hide_border=true&background=0d0d0d&ring=c9a0ff&fire=7B2FBE&currStreakLabel=c9a0ff&sideLabels=888888&dates=555555" />
+<img src="https://streak-stats.demolab.com/?user=eyesecc&theme=tokyonight&hide_border=true&background=0d0d0d&ring=c9a0ff&fire=7B2FBE&currStreakLabel=c9a0ff&sideLabels=888888&dates=555555" />
 
 </div>
 
@@ -73,7 +73,7 @@ Security researcher focused on **reverse engineering**, **exploit development**,
 
 ## Activity
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=VoidChecksum&theme=tokyo-night&bg_color=0d0d0d&color=c9a0ff&line=7B2FBE&point=c9a0ff&area=true&area_color=7B2FBE&hide_border=true" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=eyesecc&theme=tokyo-night&bg_color=0d0d0d&color=c9a0ff&line=7B2FBE&point=c9a0ff&area=true&area_color=7B2FBE&hide_border=true" />
 
 ---
 
@@ -91,7 +91,6 @@ Agentic Tooling         ██████████████████�
 
 <div align="center">
 
-[![Discord](https://img.shields.io/badge/Discord-v0idch3cksum-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/)
 [![TryHackMe](https://img.shields.io/badge/TryHackMe-Top%201%25-212C42?style=for-the-badge&logo=tryhackme&logoColor=white)](https://tryhackme.com/p/eyesecc)
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0d0d,50:1a0a2e,100:0d0d0d&height=100&section=footer" />
