@@ -1,1 +1,118 @@
 # eyesec
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0d0d,50:1a0a2e,100:0d0d0d&height=200&section=header&text=VoidChecksum&fontSize=60&fontColor=c9a0ff&fontAlignY=38&desc=Security%20Researcher%20%7C%20Reverse%20Engineer%20%7C%20Exploit%20Developer&descAlignY=58&descSize=18&descColor=888888&animation=fadeIn" />
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&duration=3000&pause=1000&color=C9A0FF&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=60&lines=break+systems+%E2%86%92+find+root+cause+%E2%86%92+ship+fixes;RE+%7C+Pentesting+%7C+Exploit+Research+%7C+AI+Agentic+Tooling)](https://github.com/eyesecc)
+
+<br/>
+
+[![TryHackMe](https://img.shields.io/badge/TryHackMe-Top%201%25-212C42?style=for-the-badge&logo=tryhackme&logoColor=white)](https://tryhackme.com/p/eyesec)
+[![Discord](https://img.shields.io/badge/Discord-v0idch3cksum-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/eyesec_)
+[![GitHub followers](https://img.shields.io/github/followers/VoidChecksum?style=for-the-badge&logo=github&logoColor=white&label=Follow&color=181717)](https://github.com/eyesecc)
+[![Profile Views](https://komarev.com/ghpvc/?username=VoidChecksum&style=for-the-badge&color=7B2FBE&label=PROFILE+VIEWS)](https://github.com/eyesecc)
+
+</div>
+
+---
+
+## `whoami`
+
+```
+$ cat /etc/passwd | grep eyesec
+voidchecksum:security_researcher:reverse_engineer:exploit_dev:ai_agent_builder
+```
+
+Security researcher focused on **reverse engineering**, **exploit development**, and **AI-assisted offensive tooling**. I build tools that make security research faster, more reproducible, and evidence-driven. Currently shipping production-grade Rust, Python, TypeScript, and Zig across agent infrastructure, binary patching, and desktop tooling.
+
+> **Scope first. Evidence always. Root cause over symptoms. Fixes that can actually ship.**
+
+---
+
+## Featured Projects
+
+<div align="center">
+
+| Project | Description | Stars | Lang |
+|---------|-------------|-------|------|
+| [**vibe-island**]() | Dynamic Island for AI coding tools — macOS/Windows/Linux (Hyprland, GNOME, KDE) | ![Stars]() | ![Rust]() |
+| [**void-patcher-cc**]() | 105 patches on Claude Code CLI — Bun SEA bytecode patching, drift detection, auto-heal | ![Stars]() | ![Python]() |
+| [**omniwire**]() | AI agent swarm infra — 88 MCP tools, A2A, OmniMesh VPN, nftables, CDP browser, 2FA | ![Stars]() | ![TypeScript]() |
+| [**mcp-ctl**]() | Zero-intervention MCP lifecycle manager — Claude Code, Codex, Cursor, Windsurf, all CLIs | ![Stars]() | ![Zig]() |
+| [**UltraBuild**]() | Cross-platform agentic harness for every model, every agent, every OS | ![Stars]() | ![TypeScript]() |
+| [**claude-for-firefox**]() | Community Firefox port of Claude's browser extension — sidebar + browser automation | ![Stars]() | ![JS]() |
+| [**codex-patcher-cc**]() | Rust Mach-O patches + wrapper + config installer for OpenAI Codex CLI | ![Stars]() | ![Python]() |
+| [**re-notes**]() | Reverse engineering + security research notes — public reference | ![Stars]() | ![Markdown]() |
+
+</div>
+
+---
+
+## Arsenal
+
+**Languages**
+
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+![Zig](https://img.shields.io/badge/Zig-F7A41D?style=for-the-badge&logo=zig&logoColor=black)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+**Security Tooling**
+
+![Ghidra](https://img.shields.io/badge/Ghidra-131313?style=for-the-badge&logo=ghidra&logoColor=red)
+![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white)
+![Frida](https://img.shields.io/badge/Frida-000000?style=for-the-badge&logo=javascript&logoColor=white)
+![pwndbg](https://img.shields.io/badge/pwndbg-231F20?style=for-the-badge&logo=gnu&logoColor=white)
+![Nmap](https://img.shields.io/badge/Nmap-00457C?style=for-the-badge&logo=linux&logoColor=white)
+![Radare2](https://img.shields.io/badge/Radare2-00BFFF?style=for-the-badge&logo=linux&logoColor=white)
+![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
+![Metasploit](https://img.shields.io/badge/Metasploit-2596CD?style=for-the-badge&logo=linux&logoColor=white)
+
+
+---
+
+## Stats
+
+<div align="center">
+
+<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=VoidChecksum&theme=tokyonight" />
+<img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=VoidChecksum&theme=tokyonight" />
+
+<br/>
+
+<img src="https://streak-stats.demolab.com/?user=VoidChecksum&theme=tokyonight&hide_border=true&background=0d0d0d&ring=c9a0ff&fire=7B2FBE&currStreakLabel=c9a0ff&sideLabels=888888&dates=555555" />
+
+</div>
+
+---
+
+## Activity
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=VoidChecksum&theme=tokyo-night&bg_color=0d0d0d&color=c9a0ff&line=7B2FBE&point=c9a0ff&area=true&area_color=7B2FBE&hide_border=true" />
+
+---
+
+## Domain Focus
+
+```
+Reverse Engineering     ████████████████████  binary triage · patch diffing · runtime analysis · trust-boundary mapping
+Penetration Testing     ███████████████░░░░░  web/API · attack-surface discovery · auth/ACL review · remediation
+Malware analyst         ████████████████░░░░  crash triage · PoC validation · fuzzing · exploitability scoring
+Security Audits         ██████████████░░░░░░  evidence-driven findings · repro steps · impact · shippable fixes
+Agentic Tooling         ████████████████████  MCP infra · AI harnesses · scope-safe automation · audit logs
+```
+
+---
+
+<div align="center">
+
+[![Discord](https://img.shields.io/badge/Discord-v0idch3cksum-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/)
+[![TryHackMe](https://img.shields.io/badge/TryHackMe-Top%201%25-212C42?style=for-the-badge&logo=tryhackme&logoColor=white)](https://tryhackme.com/p/eyesecc)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0d0d,50:1a0a2e,100:0d0d0d&height=100&section=footer" />
+
+</div>
