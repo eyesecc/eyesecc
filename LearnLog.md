@@ -1,59 +1,369 @@
-import markdown
+# 🚀 Your Roadmap: Zero → Elite Hacker
 
-# Data for the C Hacking Roadmap
-c_phases = [
-    {
-        "title": "Phase 1: Deep C Fundamentals",
-        "sub": "Duration: 1.5 Months",
-        "badge": "Core Logic",
-        "topics": ["Advanced Pointers & Memory", "Structs, Unions & Bitfields", "The Compilation Toolchain", "Manual Memory Management"],
-        "projects": ["Custom Memory Allocator (malloc/free)", "Memory-safe String Library"]
-    },
-    {
-        "title": "Phase 2: Linux System Programming",
-        "sub": "Duration: 2 Months",
-        "badge": "System Level",
-        "topics": ["Syscalls & The Kernel API", "Process Lifecycle (fork/exec)", "Inter-Process Communication", "Socket Programming (Raw Sockets)"],
-        "projects": ["Multi-threaded Web Server", "Raw Socket Packet Sniffer"]
-    },
-    {
-        "title": "Phase 3: The Hacker's C (Security)",
-        "sub": "Duration: 2.5 Months",
-        "badge": "Exploitation",
-        "topics": ["x86_64 Assembly Fundamentals", "Binary Analysis & Reverse Engineering", "Memory Corruption Mechanics", "GDB & Ghidra Mastery"],
-        "projects": ["CrackMe Challenge Set", "Custom Buffer Overflow Exploit Lab"]
-    }
-]
+> Interactive-style roadmap converted into a clean GitHub-ready `.md` file.
+>
+> Built for learning **C → Low-Level Programming → Exploit Development → Reverse Engineering → Advanced Cybersecurity**.
 
-def generate_markdown(phases, filename):
-    md_content = "# C for Hacking: Professional Learning Roadmap\n\n"
-    md_content += "> **Focus:** Mastering memory, system internals, and exploitation logic through pure C.\n\n"
-    
-    # Adding Mermaid Flowchart for GitHub rendering
-    md_content += "### 🗺️ Visual Path\n"
-    md_content += "```mermaid\ngraph LR\n"
-    md_content += "    A[Phase 1: Deep C] --> B[Phase 2: System Programming]\n    B --> C[Phase 3: Exploitation Logic]\n\n"
-    md_content += "    style A fill:#7c4dff,stroke:#fff,stroke-width:2px,color:#fff\n"
-    md_content += "    style B fill:#00c853,stroke:#fff,stroke-width:2px,color:#fff\n"
-    md_content += "    style C fill:#ff6d00,stroke:#fff,stroke-width:2px,color:#fff\n"
-    md_content += "```\n\n---\n\n"
+---
 
-    for p in phases:
-        md_content += f"## {p['title']}\n"
-        md_content += f"**{p['sub']}** | `{p['badge']}`\n\n"
-        
-        md_content += "### 🧠 Mastery Topics\n"
-        for topic in p['topics']:
-            md_content += f"- [ ] {topic}\n"
-        
-        md_content += "\n### 🛠️ Phase Projects\n"
-        for proj in p['projects']:
-            md_content += f"- `PROJ:` {proj}\n"
-        md_content += "\n---\n\n"
+## 📈 Progress
 
-    with open(filename, 'w', encoding='utf-8') as f:
-        f.write(md_content)
-    print(f"File '{filename}' generated successfully.")
+* [ ] Phase 0
+* [ ] Phase 1
+* [ ] Phase 2
+* [ ] Phase 3
+* [ ] Phase 4
+* [ ] Phase 5
+* [ ] Phase 6
+* [ ] Phase 7
+* [ ] Phase 8
 
-# Execute
-generate_markdown(c_phases, 'c-hacking-roadmap.md')
+---
+
+# 🟣 Phase 0 — How Computers Really Work
+
+### *Before you write a single line of C*
+
+`Foundation`
+
+## 📚 Topics You Will Master
+
+* Binary & hex numbers
+* How the CPU works
+* RAM vs storage
+* Operating systems basics
+* What is a file system
+* What is a process
+* Linux terminal basics
+
+## 🔗 Resources
+
+* **CS50 (Week 0 & 1)** — Free course by Harvard
+* **How CPU Works — Sebastian Lague** — YouTube
+* **Linux Journey** — Interactive Linux learning site
+* **The Linux Command Line — Shotts** — Free online book
+
+## 🛠 Projects
+
+* Navigate folders using Linux terminal
+* Create/delete files manually
+* Convert decimal ↔ binary ↔ hex by hand
+* Understand what happens when you type `ls`
+
+---
+
+# 🟢 Phase 1 — C Fundamentals
+
+### *Your first programs, the right way*
+
+`Learn C`
+
+## 📚 Topics You Will Master
+
+* Installing GCC on Linux
+* Variables & data types
+* Operators
+* If / else conditions
+* Loops
+* Functions
+* Arrays
+* Strings (`char[]`)
+* `printf` / `scanf`
+
+## 🔗 Resources
+
+* **CS50 Week 1 (C focus)**
+* **The C Programming Language — K&R**
+* **Exercism.io — C Track**
+* **Bro Code — C Programming Tutorial**
+
+## 🛠 Projects
+
+* Calculator in C
+* Number guessing game
+* Vowel counter
+
+---
+
+# 🔵 Phase 2 — Pointers & Memory
+
+### *The hardest part — and the most important*
+
+`Core C`
+
+## 📚 Topics You Will Master
+
+* What pointers are
+* Pointer arithmetic
+* Arrays & pointers
+* `malloc()` / `free()`
+* Memory leaks
+* Structs
+* Typedef
+* Passing by reference
+* Function pointers
+
+## 🔗 Resources
+
+* **C Programming: A Modern Approach — K.N. King**
+* **Pointers in C — Jacob Sorber**
+* **LeetCode Easy Problems (C)**
+* **Compiler Explorer (godbolt.org)**
+
+## 🛠 Projects
+
+* Dynamic array implementation
+* Linked list in C
+* Reverse strings using pointers
+
+---
+
+# 🟠 Phase 3 — Advanced C & Compilation
+
+### *How your code becomes a running program*
+
+`Advanced C`
+
+## 📚 Topics You Will Master
+
+* Stack vs heap vs BSS
+* How `malloc()` works internally
+* Bitwise operations
+* File I/O
+* Compilation pipeline
+* Makefiles
+* Multi-file projects
+* Header files
+* Macros & `#define`
+
+## 🔗 Resources
+
+* **Computer Systems: A Programmer's Perspective (CS:APP)**
+* **Memory Layout of C Programs — CodeVault**
+* **cdecl.org**
+* Practice writing Makefiles manually
+
+## 🛠 Projects
+
+* Hex dump tool (`xxd` clone)
+* Multi-file project with Makefile
+* XOR encryption/decryption tool
+
+---
+
+# 🔴 Phase 4 — Assembly & OS Internals
+
+### *Speak the CPU's language*
+
+`Low Level`
+
+## 📚 Topics You Will Master
+
+* x86-64 registers
+* Function calls & call stack
+* Reading assembly output
+* System calls
+* Virtual memory
+* Processes & threads
+* Signals
+* ELF binary format
+
+## 🔗 Resources
+
+* **Programming from the Ground Up — Bartlett**
+* **GDB Debugger**
+* **x86-64 Assembly Tutorials**
+* **pwn.college Assembly Module**
+
+## 🛠 Projects
+
+* Hello World in Assembly
+* Step through programs with GDB
+* Analyze compiled assembly using `objdump`
+
+---
+
+# 🌸 Phase 5 — Security Fundamentals
+
+### *Learn how things break*
+
+`Hacking`
+
+## 📚 Topics You Will Master
+
+* Buffer overflows
+* Stack smashing
+* Format string vulnerabilities
+* Integer overflows
+* ASLR / NX / PIE / Canary
+* Disabling protections safely for learning
+* pwndbg / peda / gef
+* `strace` & `ltrace`
+* Reading CVEs
+
+## 🔗 Resources
+
+* **Hacking: The Art of Exploitation — Erickson**
+* **pwn.college Intro to Cybersecurity**
+* **LiveOverflow**
+* **picoCTF**
+
+## 🛠 Projects
+
+* Trigger your own overflow
+* Leak memory with format string bugs
+* Exploit binaries without protections
+
+---
+
+# 🟩 Phase 6 — Exploit Development
+
+### *Turn crashes into control*
+
+`Exploits`
+
+## 📚 Topics You Will Master
+
+* Finding offsets
+* RIP/EIP control
+* Shellcode writing
+* NOP sleds
+* ret2libc
+* ROP chains
+* Bypassing ASLR
+* Heap exploitation basics
+
+## 🔗 Resources
+
+* **exploit.education**
+* **pwn.college Exploitation Module**
+* **The Shellcoder's Handbook**
+* **pwntools**
+
+## 🛠 Projects
+
+* Stack overflow → shellcode execution
+* ret2libc exploit
+* Build ROP chains manually
+
+---
+
+# ⚪ Phase 7 — Reverse Engineering
+
+### *Read code with no source*
+
+`RE`
+
+## 📚 Topics You Will Master
+
+* Static vs dynamic analysis
+* Ghidra basics
+* IDA Free basics
+* Reconstructing C from assembly
+* Pattern recognition
+* Unpacking executables
+* Wireshark analysis
+* Malware behavior
+* Deobfuscation
+
+## 🔗 Resources
+
+* **Practical Malware Analysis**
+* **Ghidra**
+* **crackmes.one**
+* **stacksmashing Ghidra tutorials**
+
+## 🛠 Projects
+
+* Reverse a crackme
+* Analyze malware inside a VM
+* Reconstruct structs from binaries
+
+---
+
+# 🔥 Phase 8 — Specialization
+
+### *Choose your elite path*
+
+`Elite`
+
+## 📚 Topics You Will Master
+
+* Linux kernel modules
+* Rootkits
+* Embedded hacking
+* Firmware analysis
+* Network fuzzing
+* Custom shellcode payloads
+* Browser exploitation basics
+* CVE research
+* Security research publishing
+
+## 🔗 Resources
+
+* **Linux Kernel Module Programming Guide**
+* **HackTheBox / TryHackMe**
+* **Google Project Zero Blog**
+* **The Art of Memory Forensics**
+
+## 🛠 Projects
+
+* File-hiding kernel module
+* Public CVE writeup
+* Prepare for OSCP
+
+---
+
+# 🎯 Final Goal
+
+By the end of this roadmap you should be able to:
+
+* Understand how software works internally
+* Read and write low-level code
+* Debug binaries and memory manually
+* Analyze malware
+* Build exploits
+* Reverse engineer applications
+* Research vulnerabilities professionally
+* Operate like a real low-level security engineer
+
+---
+
+# 🧠 Suggested Daily Structure
+
+| Activity              | Time |
+| --------------------- | ---- |
+| Theory / Reading      | 1–2h |
+| Coding / Practice     | 2–4h |
+| Debugging / RE        | 1–2h |
+| Notes / Documentation | 30m  |
+
+---
+
+# ⭐ Recommended Mindset
+
+* Build projects constantly
+* Learn Linux deeply
+* Never skip debugging
+* Read source code often
+* Focus on fundamentals before tools
+* Document everything publicly on GitHub
+* Practice more than you consume content
+
+---
+
+# 📌 Recommended Platforms
+
+* `pwn.college`
+* `picoCTF`
+* `HackTheBox`
+* `TryHackMe`
+* `LeetCode`
+* `exploit.education`
+* `crackmes.one`
+
+---
+
+# 🏁 End Goal
+
+> Become someone capable of understanding systems at the lowest level — not just using tools.
