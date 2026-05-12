@@ -93,6 +93,5 @@ Agentic Tooling         ██████████████████�
 
 [![TryHackMe](https://img.shields.io/badge/TryHackMe-Top%201%25-212C42?style=for-the-badge&logo=tryhackme&logoColor=white)](https://tryhackme.com/p/eyesecc)
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0d0d,50:1a0a2e,100:0d0d0d&height=100&section=footer" />
 
 </div>
