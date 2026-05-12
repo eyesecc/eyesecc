@@ -77,11 +77,9 @@ Security researcher focused on **reverse engineering**, **exploit development**,
 ## Domain Focus
 
 ```
-Reverse Engineering     ████████████████████  binary triage · patch diffing · runtime analysis · trust-boundary mapping
-Penetration Testing     ███████████████░░░░░  web/API · attack-surface discovery · auth/ACL review · remediation
-Malware analyst         ████████████████░░░░  crash triage · PoC validation · fuzzing · exploitability scoring
-Security Audits         ██████████████░░░░░░  evidence-driven findings · repro steps · impact · shippable fixes
-Agentic Tooling         ████████████████████  MCP infra · AI harnesses · scope-safe automation · audit logs
+Reverse Engineering     ████████████████████  
+Penetration Testing     ███████████████░░░░░  
+Malware analyst         ████████████████░░░░  
 ```
 
 ---
