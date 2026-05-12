@@ -86,7 +86,6 @@ Malware analyst         ████████████████░░�
 
 <div align="center">
 
-[![TryHackMe](https://img.shields.io/badge/TryHackMe-Top%201%25-212C42?style=for-the-badge&logo=tryhackme&logoColor=white)](https://tryhackme.com/p/eyesecc)
 
 
 </div>
