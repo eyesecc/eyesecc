@@ -36,13 +36,10 @@ Security researcher focused on **reverse engineering**, **exploit development**,
 | Project | Description | Stars | Lang |
 |---------|-------------|-------|------|
 | [**vibe-island**]() | Dynamic Island for AI coding tools — macOS/Windows/Linux (Hyprland, GNOME, KDE) | ![Stars]() | ![Rust]() |
-| [**void-patcher-cc**]() | 105 patches on Claude Code CLI — Bun SEA bytecode patching, drift detection, auto-heal | ![Stars]() | ![Python]() |
-| [**omniwire**]() | AI agent swarm infra — 88 MCP tools, A2A, OmniMesh VPN, nftables, CDP browser, 2FA | ![Stars]() | ![TypeScript]() |
-| [**mcp-ctl**]() | Zero-intervention MCP lifecycle manager — Claude Code, Codex, Cursor, Windsurf, all CLIs | ![Stars]() | ![Zig]() |
-| [**UltraBuild**]() | Cross-platform agentic harness for every model, every agent, every OS | ![Stars]() | ![TypeScript]() |
-| [**claude-for-firefox**]() | Community Firefox port of Claude's browser extension — sidebar + browser automation | ![Stars]() | ![JS]() |
-| [**codex-patcher-cc**]() | Rust Mach-O patches + wrapper + config installer for OpenAI Codex CLI | ![Stars]() | ![Python]() |
-| [**re-notes**]() | Reverse engineering + security research notes — public reference | ![Stars]() | ![Markdown]() |
+| [**void-patcher-cc**]() | 105 patches on Claude Code CLI — Bun SEA bytecode patching, drift detection, auto-heal | ![Stars]() | ![Python]((https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)) |
+| [**omniwire**]() | AI agent swarm infra — 88 MCP tools, A2A, OmniMesh VPN, nftables, CDP browser, 2FA | ![Stars]() | ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white) |
+| [**codex-patcher-cc**]() | Rust Mach-O patches + wrapper + config installer for OpenAI Codex CLI | ![Stars]() | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
+| [**re-notes**]() | Reverse engineering + security research notes — public reference | ![Stars]() | ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white) |
 
 </div>
 
@@ -57,7 +54,6 @@ Security researcher focused on **reverse engineering**, **exploit development**,
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-![Zig](https://img.shields.io/badge/Zig-F7A41D?style=for-the-badge&logo=zig&logoColor=black)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
