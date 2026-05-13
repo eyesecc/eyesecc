@@ -17,11 +17,11 @@ Security researcher focused on **reverse engineering**, **exploit development**,
 
 | Project | Description | Stars | Lang |
 |---------|-------------|-------|------|
-| [**vibe-island**]() | Dynamic Island for AI coding tools — macOS/Windows/Linux (Hyprland, GNOME, KDE) | 🌟🌟🌟🌟 | ![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white) |
-| [**void-patcher-cc**]() | 105 patches on Claude Code CLI — Bun SEA bytecode patching, drift detection, auto-heal | 🌟🌟🌟🌟 | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
-| [**omniwire**]() | AI agent swarm infra — 88 MCP tools, A2A, OmniMesh VPN, nftables, CDP browser, 2FA | 🌟🌟🌟🌟🌟 | ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white) |
-| [**codex-patcher-cc**]() | Rust Mach-O patches + wrapper + config installer for OpenAI Codex CLI | 🌟🌟 | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
-| [**re-notes**]() | Reverse engineering + security research notes — public reference | 🌟🌟🌟🌟🌟 | ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white) |
+| [**SOON**]() | Dynamic Island for AI coding tools — macOS/Windows/Linux (Hyprland, GNOME, KDE) | 🌟🌟🌟🌟 | ![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white) |
+| [**SOON**]() | 105 patches on Claude Code CLI — Bun SEA bytecode patching, drift detection, auto-heal | 🌟🌟🌟🌟 | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
+| [**SOON**]() | AI agent swarm infra — 88 MCP tools, A2A, OmniMesh VPN, nftables, CDP browser, 2FA | 🌟🌟🌟🌟🌟 | ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white) |
+| [**SOON**]() | Rust Mach-O patches + wrapper + config installer for OpenAI Codex CLI | 🌟🌟 | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
+| [**SOON**]() | Reverse engineering + security research notes — public reference | 🌟🌟🌟🌟🌟 | ![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white) |
 
 </div>
 
