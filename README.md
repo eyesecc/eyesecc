@@ -77,8 +77,9 @@ Security researcher focused on **reverse engineering**, **exploit development**,
 ## Domain Focus
 
 ```
-Penetration Testing     ███████████████░░░░░  
-Malware analyst         ████████████████░░░░  
+Penetration Testing     ███████████████
+Malware analyst         ████████████████
+Tooling                 █████████████
 ```
 
 ---
