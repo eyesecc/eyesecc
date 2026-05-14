@@ -5,7 +5,7 @@
 ## `whoami`
 
 
-Security researcher focused on **reverse engineering**, **exploit development**, and **AI-assisted offensive tooling**. I build tools that make security research faster, more reproducible, and evidence-driven. Currently shipping production-grade Rust, Python, TypeScript, and Zig across agent infrastructure, binary patching, and desktop tooling.
+Security researcher focused on **reverse engineering**, **exploit development**, Currently shipping production-grade C, Rust, Python, TypeScript.
 
 > **Logic is power.**
 
