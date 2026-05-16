@@ -1,6 +1,5 @@
 # eyeSec
-<div align="center" style="background-color="red";">
-
+<div style="text-align: center; background-color: red;">
 
 ## `whoami`
 
