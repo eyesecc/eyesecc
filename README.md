@@ -16,7 +16,8 @@ Security researcher focused on **reverse engineering**, **exploit development**,
 
 | Project | Description | Stars | Lang |
 |---------|-------------|-------|------|
-| [**SOON**]() | PROJECT DESCTIPTION | 🌟🌟🌟🌟 | ![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white) |
+| [**CCNA**]() | My CCNA Learning Journey (Exam 200-301)
+ | 🌟🌟🌟🌟 | ![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white) |
 | [**SOON**]() | PROJECT DESCTIPTION | 🌟🌟🌟🌟 | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
 | [**SOON**]() | PROJECT DESCTIPTION | 🌟🌟🌟🌟🌟 | ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white) |
 | [**SOON**]() | PROJECT DESCTIPTION | 🌟🌟 | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
